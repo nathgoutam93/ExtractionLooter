@@ -1,0 +1,39 @@
+>> Resource collection:
+[X] Design various types of resources that the player can collect within the game world.
+[X] Spawn Items based on different Drop Rate.
+[-] These resources should have different values, space and effects on the player's energy and inventory.
+
+>> Time constraint: 
+[X] Implement a timer system that counts down during gameplay.
+[X] The player must collect resources and manage their energy within this time frame.
+
+>> Inventory management: 
+[X] Create a fixed space inventory system where the player must manage their collected resources. 
+[X] This includes deciding which items to keep, which to drop, and how to maximize the total value of their inventory.
+
+>> Energy management: 
+[X] The player's Health/Energy should deplete over time.
+[X] Affecting their movement and actions.
+[-] Design a system where the player can consume food resources to regain energy.
+
+>> Extraction zones: 
+[-] Introduce extraction zones that spawn at certain points during gameplay.
+[-] The player must reach these zones in order to safely extract their collected resources.
+
+>> Scoring system:
+[-] Develop a scoring system that takes into account the value of the resources collected.
+[-] the player's remaining energy, and the time taken to reach the extraction zone.
+[-] This will provide a sense of achievement and encourage replayability.
+
+>> User interface (UI): 
+[-] Design a user-friendly UI that displays essential information
+[ Timers, Health/Energy level, Inventory, Extraction zone locations ]
+
+>> Sound and music:
+[-] Create an immersive sound and music design that complements the gameplay and enhances the overall experience.
+
+Procedural generation: Use procedural generation techniques to create diverse and
+engaging game worlds, ensuring that each playthrough offers a unique experience.
+
+Difficulty scaling: Implement difficulty scaling based on the player's progress, 
+making resource collection and management more challenging as the game progresses.

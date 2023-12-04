@@ -1,0 +1,35 @@
+>> Game Flow <<
+
+1. The player opens the game and is prompted to authenticate 
+   their account with their login credentials.
+
+2. If playing for the first time, the player is asked to enter their name and
+   select a character. Otherwise, the player is taken directly to the main menu.
+
+3. In the main menu, the player is presented with two options: Play or Training.
+   If the player hasn't reached the desired level yet, the Play option is locked.
+   they can only access Training.
+
+4. If the player selects Training, they join a single player offline game mode, 
+   where they can practice their skills and get a feel for the game mechanics.
+
+5. If the player selects Play, start matchmaking with players of the same skill level.
+   Once a match is found, the player joins a multiplayer game instance.
+
+6. During the game, the player competes against their opponent to win the match.
+
+6. After the game ends, the players are shown the game results, 
+   such as the score and the winner.
+
+7. The players are then returned to the main menu.
+   where they can choose to play another game, access training mode, 
+   adjust their game settings.
+
+Overall, the game flow includes 
+-> authentication, 
+-> personalized player information, 
+-> choice between training and play modes, 
+-> skill-based matchmaking, 
+-> multiplayer game instances, 
+-> game results.
+

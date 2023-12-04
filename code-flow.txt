@@ -1,0 +1,92 @@
+|#####| FLOW |#####|
+
+-> Application Controller
+
+This script handles instantiating the application as server or client.
+Based on how and where the application is started.
+
+- As Server
+1. It Instantiates a <ServerSingleton>
+2. Call the <ServerSingletone>.CreateServer() method,
+  Which:
+  a. Initializes the Unity Services.
+  b. Instantiates a <ServerGameManager> instance.
+3. Call the <ServerSingletone>.<ServerGameManager>.StartGameServerAsync() method
+  Which:
+  1. Call <MultiplayServerQueryService>.BeginServerQueryHandler() // 
+  2. Call <MultiplayAllocationService>.GetMatchmakerPayload() // matchmaker payload gives the game info
+  3. Call <MatchplayNetworkServer>.OpenConnection()
+  4. Call <MatchplayNetworkServer>.ConfigureServer()
+
+
+- As Client
+1. It Instantiates a <ClientSingleton>
+2. Call <ClientSingleton>.CreateClient()
+  Which:
+  a. Instantiates <ClienGameManager>
+    Which:
+    1. Call InitAsync()
+      Which:
+      a. Creates a <MatchplayNetworkClient>
+      b. Creates a <MatchplayMatchmaker>
+      c. Do Auth
+3. Call <ClientSingleton>.ToMainMenu() // load the main menu while the client is still initializing.
+
+|#################################3|
+
+
+|#####| SERVER GLOSSARY |#####|
+
+-> Server Singletone
+
+This script is instantiated at the <Application Controller>.
+
+-> Server GameManager
+
+This Script is instantiated at the <ServerSingleton>
+1. Creates a <MatchplayNetworkServer>
+2. Creates a <MultiplayAllocationService>
+3. Creates a <MultiplayServerQueryService>
+
+-> MultiplayServerQueryService
+
+This script has methodes to connect to the game server’s SQP implementation
+And handle updating the values at any time.
+such as MaxPlayers, ServerName, GameType, BuildId, Map
+
+-> MultiplayAllocationService
+
+This script has methods to subscribe to the server events.
+such as OnAllocate, OnDeallocate, and OnError.
+
+
+-> MatchplayNetworkServer
+
+This script manages the Game Server and communicates with clients through the NetworkManager object.
+
+|############################3|
+
+
+|#####| CLIENT GLOSSARY |#####|
+
+-> ClientSingleton
+
+This script is instantiated at the <Application Controller>.
+
+-> ClienGameManager
+
+On Construct this scrip call InitAsync() method which 
+a. Creates a <MatchplayNetworkClient>
+b. Creates a <MatchplayMatchmaker>
+c. Do Auth
+
+-> AuthentiationWrapper
+
+This scripts handles the Unity authentication, and authenticate anonymusly
+
+-> MatchplayNetworkClient
+
+-> MatchplayMatchmaker
+
+
+|#############################|

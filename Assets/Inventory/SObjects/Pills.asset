@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe2563a92714b948897c2f4fdb41f38, type: 3}
+  m_Name: Pills
+  m_EditorClassIdentifier: 
+  itemName: Pills
+  icon: {fileID: 0}
+  size: 2
+  canStack: 1
+  maxStackSize: 10
+  Prefeb: {fileID: 313373535914566908, guid: 069e905aa42ac4b4580baa9fc31f99af, type: 3}
+  dropRate: 40
+  value: 6
+  isConsumable: 1
+  health: 4
